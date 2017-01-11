@@ -1,0 +1,28 @@
+1. use npm install to read the node code - get all the dependecies, and download them
+2. npm start - executes index.js file and runs the application
+
+3. in browser go to localhost:3000
+
+
+4.
+-------------------------------------
+go to running instances..... in aws
+
+we need a public ip address - which means we need an elastic ip.
+
+Right now - this is the public ip:  34.196.186.137
+
+
+5.
+------------------------------------
+ssh  -i pizza-ec2-keys.pem ec2-user@ec2-34-196-186-137.compute-1.amazonaws.com
+
+ec2-user is the defaut user id for all ec2 instances the .pem file is associated w/the host, it must 
+be 400 permissions
+
+
+
+
+
+
+
