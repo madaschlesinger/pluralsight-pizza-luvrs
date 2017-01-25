@@ -68,8 +68,8 @@ module.exports.registerPlugins = (server, callback) => {
       }
     });
 
-    // setup data
-    require('./data/mock.js').insertData();
+    // setup data - if doing for the first time...
+    // require('./data/mock.js').insertData();
 
     callback();
   });
