@@ -1,0 +1,3 @@
+need .pem file downloaded from aws - once at instance create time ( first time iirc )
+removing this from git - but you need to get it out of band - and DONT check it in
+
