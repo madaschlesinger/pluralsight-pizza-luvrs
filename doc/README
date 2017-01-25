@@ -26,6 +26,13 @@ be 400 permissions
 
 10.
 ------------------------------------------------------------
+
+on the ec2 instance - update any packages which may be out of date
+then copy the code from the local host to the instance via scp
+the host has a link from pizza-luvrs to pizza-luvr b/c the launch configuration
+i typod and dropped the 's'
+
+
 [ec2-user@ip-10-0-1-47 ~]$ # sudo yum update
 [ec2-user@ip-10-0-1-47 ~]$ # update/install node on the image
 [ec2-user@ip-10-0-1-47 ~]$ # thru the yum repository
@@ -33,6 +40,9 @@ be 400 permissions
 [ec2-user@ip-10-0-1-47 ~]$ # sudo yum install -y nodejs
 
 .
+scp -r -i ./ps-aws-pizza/keys/pizza-ec2-keys.pem ./ps-aws-pizza ec2-user@ec2-34-196-186-137.compute-1.amazonaws.com:/home/ec2-user/pizza-luvrs
+
+
 
 
 11.
