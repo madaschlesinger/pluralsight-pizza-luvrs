@@ -24,5 +24,52 @@ be 400 permissions
 
 
 
+10.
+------------------------------------------------------------
+[ec2-user@ip-10-0-1-47 ~]$ # sudo yum update
+[ec2-user@ip-10-0-1-47 ~]$ # update/install node on the image
+[ec2-user@ip-10-0-1-47 ~]$ # thru the yum repository
+[ec2-user@ip-10-0-1-47 ~]$ # curl --location https://rpm.nodesource.com/setup_6.x | sudo bash -
+[ec2-user@ip-10-0-1-47 ~]$ # sudo yum install -y nodejs
+
+.
+
+
+11.
+------------------------------------------------------------
+launching ec2 instance from cli - using 'ids' of the pizza items created above - 
+this command lanuches the instance into the vpc - i.e. into the subnet w/in the vpc, and behind the securyity group
+or firewall - definging what flows can go in and out of the instance
+
+aws ec2 run-instances --image-id ami-ebbb59fd --count 1 --instance-type t2.micro --key-name pizza-ec2-keys  --security-group-ids sg-c0c539bc --subnet-id subnet-5a6c4a13
+
+
+
+aws ec2 describe-instances
+aws ec2 describe-instances --filters "Name=instance-type,Values=t2.micro"
+aws ec2 create-tags --resources i-01bf01b916d5859b0 --tags Key=Name,Value=pizza-og-4
+aws ec2 terminate-instances --instance-ids i-07ea7da14939df60e
+aws ec2 associate-address --instance-id i-01bf01b916d5859b0 --public-ip 34.196.186.137
+ssh  -i pizza-ec2-keys.pem ec2-user@ec2-34-196-186-137.compute-1.amazonaws.com
+
+
+aws ec2 describe-instances --filters "Name=instance-state-name,Values=running"
+
+
+20.
+-------------------------------------
+S3
+
+aws s3 ls
+aws s3 cp ./assets/js s3://mada.schlesinger.pizza-luvrs/js --recursive --exclude ".DS_Store"
+aws s3 cp ./assets/css s3://mada.schlesinger.pizza-luvrs/css --recursive --exclude ".DS_Store"
+aws s3 cp ./assets/pizzas s3://mada.schlesinger.pizza-luvrs/pizzas --recursive --exclude ".DS_Store"
+aws s3 cp ./assets/toppings s3://mada.schlesinger.pizza-luvrs/toppings --recursive --exclude ".DS_Store"
+aws s3 cp ./assets/toppings s3://mada.schlesinger.pizza-luvrs/toppings --recursive --exclude ".DS_Store"
+
+
+
+
+
 
 
