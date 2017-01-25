@@ -1,6 +1,0 @@
-{
-	"name": "best pizza",
-	"toppings": ["dough_crust", "marinara_sauce", "mozzarella_cheese", "cheddar_cheese", "mushrooms", "pepperoni", "banana_peppers", "ham", "green_peppers"],
-	"img": "//s3-us-west-2.amazonaws.com/pizza-luvrs-ryan-lewis/pizzas/best-pizza.png",
-	"username": "ryan"
-}
